@@ -4,7 +4,8 @@ from .models import Author, Genre, Book, BookInstance
 admin.site.register(Book)
 # admin.site.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
+
 # admin.site.register(Genre)
 # admin.site.register(BookInstance)
 class BookAdmin(admin.ModelAdmin):
