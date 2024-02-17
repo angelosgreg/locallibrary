@@ -9,7 +9,7 @@ class AuthorAdmin(admin.ModelAdmin):
 # admin.site.register(Genre)
 # admin.site.register(BookInstance)
 class BookAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title', 'author', 'display_genre')
 
 
 @admin.register(BookInstance)
