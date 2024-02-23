@@ -4,6 +4,7 @@ from django.views import generic
 
 class BookListView(generic.ListView):
     model = Book
+    paginate_by = 10
 
 def index(request):
     """View function for home page of site."""
