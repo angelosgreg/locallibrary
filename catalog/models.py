@@ -83,6 +83,11 @@ class BookInstance(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return f'{self.id} ({self.book.title})'
+    @property
+    def is_overdue(self):
+        """Determines if the book is overdue based on due date and current date."""
+        return bool(self.due_back and date.today() > self.due_back)
+
 class Author(models.Model):
     """Model representing an author."""
     first_name = models.CharField(max_length=100)
